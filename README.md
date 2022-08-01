@@ -143,10 +143,18 @@ $  rails generate rspec:install
   $  rails generate migration AddPostRefToLikes
   $  rails generate migration AddUserRefToPosts
 ```
+### Generate Model
 
+```bash
+  $  rails generate model User name  photo bio:text posts_counter:integer  
+  $  rails generate model Post  title  text:text comments_counter:integer likes_counter:integer author:references
+  $  rails generate model Like author:references post:references 
+  $  rails generate model Comments text:text author:references post:references
+```
 
 #### Generate Schema
 
+To push the Migration into the database
 ```bash
   $   rails db:migrate
 ```
