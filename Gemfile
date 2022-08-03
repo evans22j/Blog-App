@@ -12,7 +12,7 @@ gem 'rails', '~> 7.0.3'
 gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -51,7 +51,6 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'ffi'
-
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'rails-controller-testing'
@@ -60,6 +59,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'bullet'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
