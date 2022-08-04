@@ -31,5 +31,11 @@ RSpec.describe 'Test Index Page', type: :feature do
       expect(page).to have_content('3')
       expect(page).to have_content('5')
     end
+    
+    it 'redirects to users show page' do
+      visit root_path
+      click_on @first_user.name
+      expect(page).to have_content(`#{@username1}\'s Most Recent Posts`)
+    end
   end
 end
