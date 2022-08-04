@@ -50,7 +50,7 @@ RSpec.describe 'Test Show user Page', type: :feature do
       expect(page).to have_content('Comments: 0 Likes: 0')
     end
 
-    it 'redirects me to the user's post's index page' do
+    it 'redirects me to the user post index page' do
       click_button('See all posts')
       expect(page).to have_content(@user.bio)
       expect(page).to have_content("Number of posts: #{@user.posts_counter}")
