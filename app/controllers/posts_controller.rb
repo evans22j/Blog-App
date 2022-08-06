@@ -1,13 +1,23 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
     @user = current_user
     @posts = @user.posts.includes(:comments)
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   end
 
   def show
     @post = Post.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render json: @post }
+    end
   end
 
   def new
@@ -26,6 +36,13 @@ class PostsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @user = User.find(@post.author_id)
+    @post.destroy
+    redirect_to user_url(@user)
   end
 
   private

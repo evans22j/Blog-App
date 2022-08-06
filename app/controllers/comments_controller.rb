@@ -1,4 +1,13 @@
 class CommentsController < ApplicationController
+  def index
+    @user = current_user
+    @comments = @user.comments
+
+    respond_to do |format|
+      format.json { render json: @comments }
+    end
+  end
+
   def new
     @comment = Comment.new
     @user = current_user
@@ -19,6 +28,12 @@ class CommentsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    redirect_to user_post_url(current_user, comment.post), notice: 'Comment was successfully destroyed.'
   end
 
   private

@@ -173,6 +173,12 @@ This project is build with:
 - Twitter: [@Evans_22J](https://twitter.com/Evans_22J)
 - LinkedIn: [@Evans Sitibekiso](https://www.linkedin.com/in/evans-sitibekiso/)
 
+👤 **Edward Odhiambo**
+
+- GitHub: [@whit3d](https://github.com/white3d)
+- Twitter: [@odhiambo_ed](https://twitter.com/odhiambo_ed)
+- LinkedIn: [Edward Odhiambo](https://www.linkedin.com/in/edward-odhiambo-6a462a21b/)
+
 ## 🤝 Contributor
 
 
