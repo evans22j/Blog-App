@@ -45,7 +45,7 @@ $  sudo -u postgres createuser blog-app -s
 ### Clone this repository
 
 ```bash
-$ git clone https://github.com/BenMukebo/Blog-app.git
+$ git clone https://github.com/evans22j/Blog-App.git
 $ cd Blog-app
 ```
 
