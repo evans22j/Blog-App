@@ -42,5 +42,18 @@ RSpec.describe 'Test Show user Page', type: :feature do
     it 'should have button to show all posts' do
       expect(page).to have_link('See all posts')
     end
+
+    it "redirects me to that post's show page." do
+      first('.post > a').click
+      expect(page).to have_content('Add a new comment')
+      find_button('like post')
+      expect(page).to have_content('Comments: 0 Likes: 0')
+    end
+
+    it 'redirects me to the user post index page' do
+      click_button('See all posts')
+      expect(page).to have_content(@user.bio)
+      expect(page).to have_content("Number of posts: #{@user.posts_counter}")
+    end
   end
 end
